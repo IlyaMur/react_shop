@@ -5,12 +5,14 @@ import { Preloader } from "./Preloader";
 import { GoodsList } from "./GoodsList";
 import { Cart } from "./Cart";
 import { CartList } from "./CartList";
+import { Alert } from "./Alert";
 
 function Shop() {
   const [goods, setGoods] = useState([]);
   const [loading, setLoading] = useState(true);
   const [order, setOrder] = useState([]);
   const [isCartShow, setCartShow] = useState(false);
+  const [alertName, setAlertName] = useState("");
 
   const addToCart = (item) => {
     const itemIndex = order.findIndex((orderItem) => orderItem.id === item.id);
@@ -34,6 +36,7 @@ function Shop() {
       });
       setOrder(newOrder);
     }
+    setAlertName(item.name);
   };
 
   const decreaseAmount = (itemId) => {
@@ -89,6 +92,10 @@ function Shop() {
       });
   }, []);
 
+  const closeAlert = () => {
+    setAlertName("");
+  };
+
   return (
     <main className="container content">
       <Cart quantity={order.length} handleCartShow={handleCartShow} />
@@ -106,6 +113,7 @@ function Shop() {
           increaseAmount={increaseAmount}
         />
       )}
+      {alertName && <Alert name={alertName} closeAlert={closeAlert} />}
     </main>
   );
 }

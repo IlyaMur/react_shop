@@ -30,6 +30,10 @@ function CartList(props) {
       )}
 
       <li className="collection-item active">Total price: {totalPrice} rub.</li>
+      <li className="collection-item right">
+        <button className="btn"> Make order </button>
+      </li>
+
       <i className="material-icons cart-close" onClick={handleCartShow}>
         close
       </i>
