@@ -1,10 +1,16 @@
 function CartItem(props) {
-  const { id, name, price, quantity } = props;
+  const {
+    id,
+    name,
+    price,
+    quantity,
+    removeFromCart = Function.prototype,
+  } = props;
 
   return (
     <li className="collection-item">
-      {name} x{quantity} = {price}
-      <span className="secondary-content">
+      {name} x{quantity} = {price * quantity} rub.
+      <span className="secondary-content" onClick={() => removeFromCart(id)}>
         <i className="material-icons cart-delete">close</i>
       </span>
     </li>
