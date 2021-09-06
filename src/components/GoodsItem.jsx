@@ -1,12 +1,6 @@
 function GoodsItem(props) {
   let { id, name, description, price, full_background, addToCart } = props;
 
-  const img = document.createElement("img");
-  img.src = full_background;
-  if (!img.naturalHeight) {
-    full_background = `https://via.placeholder.com/468x465?text=${name}`;
-  }
-
   return (
     <div className="card">
       <div className="card-image">

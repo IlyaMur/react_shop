@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { API_KEY, API_URL } from "../config";
+import { API_URL } from "../config";
 
 import { Preloader } from "./Preloader";
 import { GoodsList } from "./GoodsList";
