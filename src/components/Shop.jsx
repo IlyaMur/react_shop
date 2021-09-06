@@ -61,7 +61,7 @@ function Shop() {
       ) : (
         <GoodsList goods={goods} addToCart={addToCart} />
       )}
-      {isCartShow && <CartList order={order} />}
+      {isCartShow && <CartList order={order} handleCartShow={handleCartShow} />}
     </main>
   );
 }

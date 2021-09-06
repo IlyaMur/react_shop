@@ -2,7 +2,9 @@ import { Cart } from "./Cart";
 import { CartItem } from "./CartItem";
 
 function CartList(props) {
-  const { order = [] } = props;
+  const { order = [], handleCartShow = Function.prototype } = props;
+
+  const totalPrice = order.reduce((sum, el) => sum + el.price * el.quantity, 0);
 
   return (
     <ul className="collection cart-list">
@@ -10,10 +12,13 @@ function CartList(props) {
       {order.length ? (
         order.map((item) => <CartItem key={item.id} {...item} />)
       ) : (
-        <li className="collection-item active"> Cart is empty </li>
+        <li className="collection-item"> Cart is empty </li>
       )}
 
-      <li className="collection-item">Total price:</li>
+      <li className="collection-item active">Total price: {totalPrice} rub.</li>
+      <i className="material-icons cart-close" onClick={handleCartShow}>
+        close
+      </i>
     </ul>
   );
 }
