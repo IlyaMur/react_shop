@@ -90,3 +90,9 @@ nav {
     opacity: 1;
   }
 }
+
+.cart-quantity {
+  cursor: pointer;
+  vertical-align: middle;
+  color: #26a69a;
+}
