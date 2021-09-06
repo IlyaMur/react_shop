@@ -1,4 +1,3 @@
-import { Cart } from "./Cart";
 import { CartItem } from "./CartItem";
 
 function CartList(props) {
