@@ -6,7 +6,9 @@ function Footer() {
           © {new Date().getFullYear()} Copyright Text
           <a
             className="grey-text text-lighten-4 right"
-            href="https://github.com/IlyaMur/react-movies_app"
+            href="https://github.com/IlyaMur/react_shop"
+            target="_blank"
+            rel="noreferrer"
           >
             Repo
           </a>
