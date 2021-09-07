@@ -67,24 +67,6 @@ nav {
   cursor: pointer;
 }
 
-@media (min-width: 767px) {
-  .cart {
-    top: 5rem;
-    bottom: unset;
-  }
-}
-
-@keyframes show {
-  from {
-    top: 70%;
-    opacity: 0;
-  }
-  to {
-    top: 50%;
-    opacity: 1;
-  }
-}
-
 .cart-quantity {
   cursor: pointer;
   vertical-align: middle;
@@ -104,5 +86,24 @@ nav {
   to{
     opacity: 1;
     transform: translateY(0rem);
+  }
+}
+
+@media (min-width: 767px) {
+  .cart {
+    top: 5rem;
+    bottom: unset;
+  }
+}
+
+@keyframes show {
+  from {
+    top: 70%;
+    opacity: 0;
+  }
+
+  to {
+    top: 50%;
+    opacity: 1;
   }
 }
