@@ -12,7 +12,6 @@ function Shop() {
   const [order, setOrder] = useState([]);
   const [isCartShow, setCartShow] = useState(false);
   const [alertName, setAlertName] = useState("");
-  const access = process.env.REACT_APP_KEY;
 
   const addToCart = (item) => {
     const itemIndex = order.findIndex((orderItem) => orderItem.id === item.id);
@@ -82,7 +81,7 @@ function Shop() {
   useEffect(function getGoods() {
     fetch("https://fortniteapi.io/v1/shop?lang=en", {
       headers: {
-        Authorization: access,
+        Authorization: process.env.REACT_APP_KEY,
       },
     })
       .then((response) => response.json())
