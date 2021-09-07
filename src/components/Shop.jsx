@@ -116,4 +116,5 @@ function Shop() {
     </main>
   );
 }
+
 export { Shop };
